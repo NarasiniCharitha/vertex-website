@@ -1,38 +1,148 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
-<title>Candidate Login</title>
+<title>Login Portal - Vertex Workforce Solutions</title>
 <link rel="stylesheet" href="style.css">
+<script>
+function showSection(id){
+document.getElementById("candidateLogin").classList.add("hidden");
+document.getElementById("adminLogin").classList.add("hidden");
+document.getElementById("registration").classList.add("hidden");
+document.getElementById("candidateDashboard").classList.add("hidden");
+document.getElementById("adminDashboard").classList.add("hidden");
+
+document.getElementById(id).classList.remove("hidden");
+}
+</script>
 </head>
 
 <body>
 
-<header>
-    <div class="container nav-container">
-        <div class="logo">
-            <span>Vertex Workforce Solutions</span>
-        </div>
+<div class="container">
 
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="login.html">Candidate Login</a>
-        </nav>
-    </div>
-</header>
+<!-- NAVIGATION BUTTONS -->
+<div class="nav-buttons">
+<button onclick="showSection('candidateLogin')">Jobseeker Login</button>
+<button onclick="showSection('registration')">Register</button>
+<button onclick="showSection('adminLogin')">Admin Login</button>
+<button onclick="location.href='index.html'">Return Home</button>
+</div>
 
-<section class="login-page">
-    <div class="login-card">
-        <h2>Candidate Login</h2>
+<!-- CANDIDATE LOGIN -->
+<div id="candidateLogin" class="card">
+<h2>Jobseeker Login</h2>
+<input type="email" placeholder="Email">
+<input type="password" placeholder="Password">
+<button onclick="showSection('candidateDashboard')">Login</button>
+</div>
 
-        <input type="email" placeholder="Email Address">
-        <input type="password" placeholder="Password">
+<!-- ADMIN LOGIN -->
+<div id="adminLogin" class="card hidden">
+<h2>Admin Login</h2>
+<input type="text" placeholder="Admin Username">
+<input type="password" placeholder="Password">
+<button onclick="showSection('adminDashboard')">Login</button>
+</div>
 
-        <button>Login</button>
+<!-- REGISTRATION -->
+<div id="registration" class="card hidden">
+<h2>Candidate Registration</h2>
 
-        <p>New user? <a href="#">Register</a></p>
-    </div>
-</section>
+<h3>Basic Info</h3>
+<input type="text" placeholder="Full Name">
+<input type="email" placeholder="Email">
+<input type="text" placeholder="Phone">
+<input type="text" placeholder="Location">
+
+<h3>Education</h3>
+<input type="text" placeholder="Degree">
+<input type="text" placeholder="College">
+
+<h3>Experience</h3>
+<input type="text" placeholder="Company">
+<input type="text" placeholder="Role">
+
+<h3>Skills</h3>
+<input type="text" placeholder="Skills">
+
+<h3>Languages</h3>
+<input type="text" placeholder="Languages">
+
+<h3>Job Preference</h3>
+<input type="text" placeholder="Preferred Location">
+<input type="text" placeholder="Expected Salary">
+<select>
+<option>Full Time</option>
+<option>Internship</option>
+<option>Remote</option>
+</select>
+
+<h3>Resume Upload</h3>
+<input type="file">
+
+<h3>Profile Completion</h3>
+<div class="progress-bar">
+<div class="progress"></div>
+</div>
+
+<button onclick="showSection('candidateLogin')">Submit Registration</button>
+</div>
+
+<!-- CANDIDATE DASHBOARD -->
+<div id="candidateDashboard" class="card hidden">
+<button class="logout" onclick="showSection('candidateLogin')">Logout</button>
+<h2>Candidate Dashboard</h2>
+
+<h3>Available Jobs</h3>
+<p>Python Developer – Hyderabad <button>Apply</button></p>
+<p>HR Executive – Bangalore <button>Apply</button></p>
+
+<h3>Application Tracking</h3>
+<p>Status: Applied → Shortlisted → Interview → Offer</p>
+
+<h3>Notifications</h3>
+<p>Interview scheduled on 20 Feb 2026</p>
+
+<h3>ATS Resume Builder (Premium)</h3>
+<button>Upgrade to Premium</button>
+</div>
+
+<!-- ADMIN DASHBOARD -->
+<div id="adminDashboard" class="card hidden">
+<button class="logout" onclick="showSection('adminLogin')">Logout</button>
+<h2>Admin Dashboard</h2>
+
+<table class="admin-table">
+<tr>
+<th>Candidate</th>
+<th>Email</th>
+<th>Job</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+
+<tr>
+<td>Rahul</td>
+<td>rahul@email.com</td>
+<td>Python Developer</td>
+<td>Applied</td>
+<td><button>Shortlist</button> <button>Reject</button></td>
+</tr>
+
+<tr>
+<td>Sneha</td>
+<td>sneha@email.com</td>
+<td>HR Executive</td>
+<td>Interview</td>
+<td><button>Send Offer</button></td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
 
 </body>
 </html>
