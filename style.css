@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 
+
 body {
     font-family: 'Poppins', sans-serif;
     background: #0c1c2c;
@@ -12,39 +13,62 @@ body {
 
 /* CONTAINER */
 .container {
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;   /* gives small space from screen edge */
 }
+
 
 /* HEADER */
 header {
-    padding: 20px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.2);
+  background: #0b1f2e;
+  padding: 15px 50px;
 }
 
 .nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
+/* Logo section */
 .logo {
-    display: flex;
-    align-items: center;
+  display: flex;
+  flex-direction: column;   /* puts text under logo */
+  align-items: center;
+  margin-right: 120px;      /* space before Home */
 }
 
+/* Logo image */
 .logo img {
-    width: 40px;
-    margin-right: 10px;
+  width: 45px;
+}
+
+/* Company name */
+.company-name {
+  color: white;
+  font-size: 14px;
+  margin-top: 5px;
+  white-space: nowrap;   /* 🔥 This keeps it in ONE line */
+}
+
+
+
+
+/* Navigation */
+nav {
+  display: flex;
+  gap: 35px;
 }
 
 nav a {
-    color: white;
-    text-decoration: none;
-    margin-left: 20px;
-    font-size: 14px;
+  color: white;
+  text-decoration: none;
 }
+
+
+
+
 
 /* HERO SECTION */
 .hero {
@@ -484,4 +508,98 @@ nav a {
 
 .login-card button:hover {
     background: #6c46c7;
+}
+body{
+font-family: Arial, sans-serif;
+margin:0;
+background:#0c1c2c;
+color:white;
+}
+
+.container{
+width:90%;
+max-width:900px;
+margin:40px auto;
+}
+
+.card{
+background:#071b2e;
+padding:30px;
+border-radius:10px;
+margin-bottom:20px;
+box-shadow:0 0 10px rgba(0,0,0,0.3);
+}
+
+h2{
+margin-bottom:20px;
+}
+
+input, select{
+width:100%;
+padding:10px;
+margin:8px 0;
+border-radius:5px;
+border:none;
+}
+
+button{
+padding:10px 15px;
+border:none;
+border-radius:5px;
+cursor:pointer;
+margin-top:10px;
+background:#8a5cf6;
+color:white;
+}
+
+button:hover{
+background:#6c46c7;
+}
+
+.nav-buttons{
+display:flex;
+gap:10px;
+margin-bottom:20px;
+flex-wrap:wrap;
+}
+
+.nav-buttons button{
+background:#39b7c5;
+}
+
+.hidden{
+display:none;
+}
+
+.progress-bar{
+background:#ddd;
+height:10px;
+border-radius:10px;
+margin-top:10px;
+}
+
+.progress{
+background:green;
+height:10px;
+border-radius:10px;
+width:60%;
+}
+
+.logout{
+float:right;
+background:red;
+}
+
+.admin-table{
+width:100%;
+border-collapse:collapse;
+margin-top:20px;
+background:white;
+color:black;
+}
+
+.admin-table th, .admin-table td{
+border:1px solid #ddd;
+padding:10px;
+text-align:center;
 }
